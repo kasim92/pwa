@@ -1,12 +1,41 @@
 <template>
   <div id="app">
     <div id="nav">
+      {{lat +' , '+ lng}}
       <router-link to="/">Home</router-link> |
       <router-link to="/about">About</router-link>
     </div>
-    <router-view/>
+    <router-view />
   </div>
 </template>
+<script>
+export default {
+  name: "app",
+  data() {
+    return {
+      lng: null,
+      lat: null,
+    };
+  },
+  methods: {
+    async getLocation() {
+      try {
+        const coordinates = await this.$getLocation({
+          enableHighAccuracy: true,
+        });
+        this.lng = coordinates.lng;
+        this.lat = coordinates.lat;
+      } catch (error) {
+        this.noLocation = true;
+      }
+    },
+  },
+  beforeMount() {
+    this.getLocation();
+  },
+  mounted() {},
+};
+</script>
 
 <style lang="scss">
 #app {
