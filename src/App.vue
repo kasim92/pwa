@@ -1,61 +1,68 @@
 <template>
-  <div id="app">
-    <div id="nav">
-      {{lat +' , '+ lng}}
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view />
-  </div>
+  <v-app>
+    <v-main>
+      <v-container fluid>
+        <router-view />
+      </v-container>
+    </v-main>
+  </v-app>
 </template>
+
 <script>
+import { initJsStore } from "./service/idb_service";
+import { Global } from "../global";
+
+
 export default {
-  name: "app",
+  components: {},
   data() {
-    return {
-      lng: null,
-      lat: null,
-    };
+    return {};
   },
-  methods: {
-    async getLocation() {
-      try {
-        const coordinates = await this.$getLocation({
-          enableHighAccuracy: true,
-        });
-        this.lng = coordinates.lng;
-        this.lat = coordinates.lat;
-      } catch (error) {
-        this.noLocation = true;
+  computed: {},
+  async beforeCreate() {
+    try {
+      const isDbCreated = await initJsStore();
+      if (isDbCreated) {
+        console.log("db created");
+        // prefill database
+      } else {
+        console.log("db opened");
       }
-    },
+    } catch (ex) {
+      console.error(ex);
+      alert(ex.message);
+      Global.isIndexedDbSupported = false;
+    }
   },
-  beforeMount() {
-    this.getLocation();
-  },
-  mounted() {},
 };
 </script>
 
-<style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+<style>
+.v-application--is-rtl .v-tab {
+  letter-spacing: 0 !important;
 }
 
-#nav {
-  padding: 30px;
-
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
-    }
-  }
+::-webkit-scrollbar {
+  width: 6px !important;
+  height: 6px !important;
+}
+::-webkit-scrollbar-thumb {
+  background: radial-gradient(circle, #005cc8 14%, #005cc8 62%) !important;
+  border-radius: 10px !important;
+  box-shadow: inset 7px 7px 15px #e0e0e0 !important;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: radial-gradient(circle, #c7ceff 14%, #f9d4ff 64%) !important;
+}
+::-webkit-scrollbar-track {
+  background: #ffffff !important;
+  border-radius: 10px !important;
+}
+.v-input__slot::before {
+  border-style: none !important;
+}
+.v-btn {
+  text-transform: capitalize !important;
+  letter-spacing: 0 !important;
 }
 </style>
