@@ -2,6 +2,7 @@
   <v-app>
     <v-main>
       <v-container fluid>
+        
         <router-view />
       </v-container>
     </v-main>
@@ -11,7 +12,6 @@
 <script>
 import { initJsStore } from "./service/idb_service";
 import { Global } from "../global";
-
 
 export default {
   components: {},
@@ -34,6 +34,7 @@ export default {
       Global.isIndexedDbSupported = false;
     }
   },
+ 
 };
 </script>
 

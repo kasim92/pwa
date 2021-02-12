@@ -1,5 +1,7 @@
 <template>
   <div>
+    <div id="status"></div>
+    <div id="log"></div>
     <v-card>
       <v-card-title>
         <h4>Main Info</h4>
@@ -7,6 +9,12 @@
       <v-card-text>
         <v-row>
           <v-col>
+            <v-btn
+              color="primary"
+              @click="map"
+            >
+              map
+            </v-btn>
             <v-text-field
               v-model="todo"
               label="Todo"
@@ -77,6 +85,12 @@ export default {
     };
   },
   methods: {
+    map() {
+      window.open(
+        "https://www.google.com/maps/place/33.361598,44.335696",
+        "_blank"
+      );
+    },
     async add() {
       try {
         const todosAdedd = await this.service.addTodo({
@@ -111,6 +125,8 @@ export default {
   },
   mounted() {
     this.getTodos();
+
+    console.log(navigator.onLine ? "online" : "offline");
   },
 };
 </script>
