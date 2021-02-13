@@ -1,0 +1,44 @@
+
+tabel-card {
+    background-color: transparent !important;
+  }
+  tr.v-data-table__selected {
+    color: white!important;
+    background: #94a0ac !important;
+  }
+
+  .tabelstyle thead th {
+    color: white !important;
+    background-color: #0177fb !important;
+  }
+  .v-application.theme--dark tabelstyle tbody td {
+    background-color: transparent !important;
+    background-color: #0177fb !important;
+  }
+  .v-data-table > .v-data-table__wrapper {
+    border-top-left-radius: 20px !important;
+    border-top-right-radius: 25px !important;
+  }
+  .v-data-table {
+    background-color: transparent !important;
+  }
+  .active-tab {
+    background-color: #0177fb;
+    border-radius: 500px !important;
+    color: white !important;
+  }
+  .card-container {
+    box-shadow: 10px 12px 50px rgba(231, 231, 231, 0.86) !important;
+    border-radius: 20px !important;
+  }
+  .tabs-style {
+    border: 1px solid #f1f1f5 !important;
+    box-sizing: border-box !important;
+    border-radius: 18px !important;
+    width: 23em !important;
+    height: 43px !important;
+    padding-top: 3px !important;
+  }
+  .v-tab {
+    text-transform: none !important;
+  }

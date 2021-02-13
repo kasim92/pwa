@@ -1,21 +1,9 @@
 import Vue from 'vue';
+import Vuetify from 'vuetify/lib/framework';
 import '@fortawesome/fontawesome-free/css/all.css' // Ensure you are using css-loader
+// import '../assets/styles/IconlyStyle.css'
 
-import Vuetify, {
-    VRow,
-    VCol,
-    VTextField,
-    VTooltip,
-    VCheckbox,
-    VSelect,
-} from 'vuetify/lib';
-import { Ripple, Intersect, Touch, Resize } from 'vuetify/lib/directives';
-
-Vue.use(Vuetify, {
-    components: { VRow, VTooltip, VCol, VTextField, VCheckbox, VSelect },
-    directives: { Ripple, Intersect, Touch, Resize },
-});
-
+Vue.use(Vuetify);
 const opts = {
     breakpoint: {
         mobileBreakpoint: 'sm' // This is equivalent to a value of 960
@@ -67,8 +55,9 @@ const opts = {
     },
     icons: {
         iconfont: 'fa',
+
     },
-    // rtl: localStorage.getItem('lang') !== null ? localStorage.getItem('lang') == 'en' ? false : true : false,
+    rtl: localStorage.getItem('lang') !== null ? localStorage.getItem('lang') == 'en' ? false : true : false,
 };
 
 export default new Vuetify(opts);

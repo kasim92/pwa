@@ -6,8 +6,11 @@ import './registerServiceWorker'
 import VueGeolocation from 'vue-browser-geolocation';
 import vuetify from './plugins/vuetify';
 import VFormBase from 'vuetify-form-base';  
+// import './styles/customStyle.css';
 
-
+import VueClipboard from 'vue-clipboard2'
+ 
+Vue.use(VueClipboard)
 Vue.use(VueGeolocation);
 Vue.use(VFormBase);
 

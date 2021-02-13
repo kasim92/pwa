@@ -15,6 +15,7 @@
             >
               map
             </v-btn>
+            <span id="gps">{{gps}}</span>
             <v-text-field
               v-model="todo"
               label="Todo"
@@ -81,14 +82,21 @@ export default {
       editedItem: [],
       todo: null,
       todos: [],
+      gps: "33.365984, 44.337622",
       service: new TodosService(),
     };
   },
   methods: {
     map() {
-      window.open(
-        "https://www.google.com/maps/place/33.361598,44.335696",
-        "_blank"
+      this.$copyText(this.gps).then(
+        function (e) {
+          window.open(
+            `https://www.google.com/maps/search/?api=1&query=${e.text}`
+          );
+        },
+        function (e) {
+          console.log(e);
+        }
       );
     },
     async add() {

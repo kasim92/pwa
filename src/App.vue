@@ -2,9 +2,9 @@
   <v-app>
     <v-main>
       <v-container fluid>
-        
         <router-view />
       </v-container>
+      <bottom-nav />
     </v-main>
   </v-app>
 </template>
@@ -12,9 +12,12 @@
 <script>
 import { initJsStore } from "./service/idb_service";
 import { Global } from "../global";
+import BottomNav from "./components/BottomNav.vue";
 
 export default {
-  components: {},
+  components: {
+    BottomNav,
+  },
   data() {
     return {};
   },
@@ -34,12 +37,11 @@ export default {
       Global.isIndexedDbSupported = false;
     }
   },
- 
 };
 </script>
 
 <style>
-.v-application--is-rtl .v-tab {
+/* .v-application--is-rtl .v-tab {
   letter-spacing: 0 !important;
 }
 
@@ -65,5 +67,5 @@ export default {
 .v-btn {
   text-transform: capitalize !important;
   letter-spacing: 0 !important;
-}
+} */
 </style>
