@@ -13,7 +13,8 @@ module.exports = {
     manifestPath: 'manifest.json',
     workboxPluginMode: 'InjectManifest',
     workboxOptions: {
-      swSrc: path.join('src', 'service-worker.js')
+      swSrc: path.join('src', 'service-worker.js'),
+      exclude: [/\.map$/, /_redirects/], //this fixed it.
     }
   },
   // productionSourceMap: process.env.NODE_ENV != 'production',
