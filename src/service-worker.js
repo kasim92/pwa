@@ -70,3 +70,4 @@ self.addEventListener('message', (event) => {
 self.__precacheManifest = [].concat(self.__precacheManifest || []);
 workbox.precaching.suppressWarnings();
 workbox.precaching.precacheAndRoute(self.__precacheManifest, {});
+workbox.routing.registerRoute(/^.*\.(jpg|JPG|gif|GIF|png|PNG|eot|woff(2)?|ttf|svg)$/, workbox.strategies.cacheFirst({ cacheName: 'image-cache', plugins: [new workbox.cacheableResponse.Plugin({ statuses: [0, 200] }), new workbox.expiration.Plugin({ maxEntries: 600 })] }), 'GET');
