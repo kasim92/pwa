@@ -1,73 +1,32 @@
-workbox.core.setCacheNameDetails({ prefix: "pwa" });
-workbox.routing.registerNavigationRoute('/index.html')
-
-workbox.routing.registerRoute(
-  new RegExp('https://peaceful-bhabha-90ff47.netlify.app'),
-  new workbox.strategies.NetworkFirst()
-);
-// workbox.routing.registerRoute(
-//   /.*\.(?:js|woff|woff2|otf|ttf)(?:$|\?)/,
-//   workbox.strategies.networkFirst({
-//     cacheName: 'assets-cache',
-//     plugins: [
-//       new workbox.expiration.Plugin({})
-//     ],
-//   })
-// )
-
-// workbox.routing.registerRoute(
-//   /\.(?:png|gif|jpg|jpeg|svg)$/,
-//   workbox.strategies.staleWhileRevalidate({
-//     cacheName: 'images',
-//     plugins: [
-//       new workbox.expiration.Plugin({
-//         maxEntries: 60,
-//         maxAgeSeconds: 30 * 24 * 60 * 60, // 30 Days
-//       }),
-//     ],
-//   }),
-// );
-// workbox.routing.registerRoute(
-//   /\.(?:js|css)$/,
-//   workbox.strategies.staleWhileRevalidate({
-//     cacheName: 'static-resources',
-//   })
-// );
-
-
-// workbox.routing.registerRoute(
-//   new RegExp('https://priceless-morse-f661d5.netlify.app/orders'),
-//   workbox.strategies.networkFirst({
-//     cacheName: 'api',
-//   }),
-// );
-
-// workbox.routing.registerRoute(
-//   new RegExp('https://fonts.(?:googleapis|gstatic).com/(.*)'),
-//   workbox.strategies.cacheFirst({
-//     cacheName: 'googleapis',
-//     plugins: [
-//       new workbox.expiration.Plugin({
-//         maxEntries: 30,
-//       }),
-//     ],
-//   }),
-// );
-
-
-self.addEventListener('message', (event) => {
-  if (event.data && event.data.type === 'SKIP_WAITING') {
-    self.skipWaiting();
-  }
-});
-
+workbox.core.setCacheNameDetails({ prefix: 'pwa-project' })
 
 /**
  * The workboxSW.precacheAndRoute() method efficiently caches and responds to
  * requests for URLs in the manifest.
  * See https://goo.gl/S9QRab
  */
-self.__precacheManifest = [].concat(self.__precacheManifest || []);
-workbox.precaching.suppressWarnings();
-workbox.precaching.precacheAndRoute(self.__precacheManifest, {});
-workbox.routing.registerRoute(/^.*\.(jpg|JPG|gif|GIF|png|PNG|eot|woff(2)?|ttf|svg)$/, workbox.strategies.cacheFirst({ cacheName: 'image-cache', plugins: [new workbox.cacheableResponse.Plugin({ statuses: [0, 200] }), new workbox.expiration.Plugin({ maxEntries: 600 })] }), 'GET');
+self.__precacheManifest = [].concat(self.__precacheManifest || [])
+workbox.precaching.precacheAndRoute(self.__precacheManifest, {})
+
+// Redirect to index.html if sw cannot find matching route
+workbox.routing.registerNavigationRoute('/index.html', {
+  /* Do not redirect routes used by firebase auth  */
+  // blacklist: [
+  //   new RegExp('/__/auth/handler'),
+  //   new RegExp('/__/auth/iframe'),
+  //   new RegExp('/.well-known')
+  // ]
+})
+
+workbox.routing.registerRoute(
+  /^https:\/\/fonts/,
+  workbox.strategies.staleWhileRevalidate({
+    cacheName: 'fonts.googleapis',
+    plugins: []
+  }),
+  'GET'
+)
+
+addEventListener('message', messageEvent => {
+  if (messageEvent.data === 'skipWaiting') return self.skipWaiting()
+})
