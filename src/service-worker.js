@@ -1,10 +1,10 @@
 workbox.core.setCacheNameDetails({ prefix: "pwa" });
 workbox.routing.registerNavigationRoute('/index.html')
 
-// workbox.routing.registerRoute(
-//   new RegExp('https://priceless-morse-f661d5.netlify.app'),
-//   new workbox.strategies.NetworkFirst()
-// );
+workbox.routing.registerRoute(
+  new RegExp('https://peaceful-bhabha-90ff47.netlify.app'),
+  new workbox.strategies.NetworkFirst()
+);
 // workbox.routing.registerRoute(
 //   /.*\.(?:js|woff|woff2|otf|ttf)(?:$|\?)/,
 //   workbox.strategies.networkFirst({
