@@ -16,6 +16,12 @@ const routes = [
     name: 'pharmacy_manage',
     component: PharmacyManage
   },
+  {
+    path: '*', // or '/index.html'
+    beforeEnter: (to, from, next) => {
+      next('/')
+    }
+  }
 ]
 
 const router = new VueRouter({
