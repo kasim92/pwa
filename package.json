@@ -9,9 +9,14 @@
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.15.2",
     "core-js": "^3.6.5",
+    "dns": "^0.2.2",
     "firebase": "^8.2.7",
+    "http2": "^3.3.7",
     "idb": "^6.0.0",
+    "idb-keyval": "^5.0.2",
     "jsstore": "^3.12.0",
+    "localforage": "^1.9.0",
+    "node-firestore-import-export": "^1.1.0",
     "register-service-worker": "^1.7.1",
     "vue": "^2.6.11",
     "vue-browser-geolocation": "^1.8.0",
@@ -19,7 +24,8 @@
     "vue-router": "^3.2.0",
     "vuetify": "^2.4.0",
     "vuetify-form-base": "^0.3.2",
-    "vuex": "^3.4.0"
+    "vuex": "^3.4.0",
+    "vuex-map-fields": "^1.4.1"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "~4.5.0",

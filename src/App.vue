@@ -1,7 +1,10 @@
 <template>
   <v-app>
     <v-main>
-      <v-container fluid>
+      <v-container
+        fluid
+        class="mx-0 px-0 pt-0"
+      >
         <router-view />
       </v-container>
       <bottom-nav />
@@ -40,7 +43,17 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
+* {
+  height: 100%;
+
+ background-color: #0f83d6;
+}
+.bg {
+  background: #0686e0 !important;
+  border-bottom-left-radius: 30px !important;
+  border-bottom-right-radius: 30px !important;
+}
 /* .v-application--is-rtl .v-tab {
   letter-spacing: 0 !important;
 }

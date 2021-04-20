@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "vuekasim",
+  "private_key_id": "4217f30c88e79be92d8bea7cd226ce408b64be88",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQCTeU7W5o9Fcle9\njltu6vG9R4wFWFhtvN+2IFFyluOyC//mENd7K3R4B5jYprUgRr6vW2EPUsUolbqg\n8jb2NjIHq1xcX5IDpkODEVUytAJB3GTLNUGg/kFyv/pTMxAhY25KG/LF4Xe5lkwQ\n0BG/ZZp/hl0DKXjVpV9RV+JAcnjobspwt+gYvvNMoJXWKi7BOkT0BLSEWYlj6V78\nLhzfuAU93BgRD9p+reKP+VeZqrpkGzarTv9oQpQe2KGHWUMuarscsxkDjgtWEete\nW19AQNqY/ZWdmc8GonMY7qPaHshjCoY6FbPrNORjMDgiKg3fJZzWbi2UgavRVm1z\np5RKwtynAgMBAAECggEADrt4n8lKmMJyd3JIOg1oduM13rbTpqrOonAaEtt2Baxj\nNQWLsTdHHFKN9164C3BlzjjPumsnXQWQLlHkIbaKSu/YezXk7U5nwikyHK2U6CVv\nQEmis8WSnjcFd9hLDTrUorymBRSgFD8qfCd9DmTFCWZP1mgHNTifDA4+gPeuknGQ\nHsA6sAsU3BWOy7mwQvE9Qc48FPJwV2qDfT0h3kDBfGp38zl8CK8O95/owUVFSPvn\nd2A2N5NoslpLzsZPEfpnGzVHxf3NNehvtai0r6b6cTyOumn3b8vv0/GhSa4p/jCZ\nJjQmTdonCLnuFGrsi3JAc3mQhbD+g29G8QSXgvFhIQKBgQDEmtUQyRpmr7Guaa93\n/F9dSrl515waX5xSv0LclrnXVSpsQc/sLwgAD/vwHJymx7LxgTvFJOphRASWW12P\nGvX12eb+T7bhwxOI66sjBEym3UzWIpivr2vFTrsvYSpBt4bO17cbrH4GzhSoRKZM\n9zFIvmUhpEDFuWMeaCwtaE+JtwKBgQDABr/x7cegoG+hz7NzhzYBJ2rT8nAyOBPY\ncAo3Msw3o3xIYq+Yg9hrBFrDwwvde+f/l1adtRtEa715v8ikdo+XVNjkLxEugyvV\n/YXf3I72r82vSx3UPDf74YbjqoTJIRwfSSMZ1BrQfPGxApVFzINJ+ikwQQ6REb3N\nfSFeYOkEkQKBgQCBV0cyysqWoaFoF9k7O4nVizJoSQNGin4CJhernXFXi4zkOYu7\nWtmNiPZ66afZROmhXh7fPMEBCklmTWdInTkQ67C+v9yVu8ufOUOWPt7arB4/hfUj\nJ2nkHT6iFe9B2qZSb7Hj/9/NREhsxvUND1aZ/7/ymOeP7L2bpHbjzIr/EwKBgHz6\nZ6bv2UOD5+PqqKMCV3W8z9yOJ9Onh9MQaLWwTBXSQ6tg/2RGO267cM+EfI50fHRv\nbSJLoymO7cz1s4LG34Hg6SDqOUaKfNdTn/QpOqr3lOkH/KwLXWyERiSa8L1u3TzH\nfx7qW2FiUHOieMDq8HAPbwtG7FIit+OsEzG35TDhAoGBAL/OTFR6Wi7pefpqbx8x\no0feTlWNTbSxrFVMPP68NPeagUqHdIvv0WVc/Pk8Os+CumPafZDNw3CDRDYUkQYL\nAc2zaCR6y3YTkfWL2hN9n7dTQcvgn4367HVFq1AZK8OsGQLhi2+LtztgGvkrsuPo\ntugeniac9wlfV21nvm451uIr\n-----END PRIVATE KEY-----\n",
+  "client_email": "firebase-adminsdk-6555g@vuekasim.iam.gserviceaccount.com",
+  "client_id": "103970332086096592279",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/firebase-adminsdk-6555g%40vuekasim.iam.gserviceaccount.com"
+}

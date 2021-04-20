@@ -1,48 +1,29 @@
 <template>
-  <div>
-    <v-bottom-navigation
-      v-model="value"
-      :background-color="color"
-      dark
-      shift
-      fixed
+  <v-bottom-navigation
+    v-model="value"
+    fixed
+    app
+    mandatory
+  >
+    <v-btn-toggle
+      v-model="toggle_exclusive"
+      borderless
+      group
       mandatory
-      class="py-2"
+      class="mx-10"
     >
       <v-btn
-        :color="color"
-        width="125"
+        v-for="(link,i) in links"
+        :key="i"
         :ripple="false"
+        @click="goTo(link.to)"
       >
-        <span class="my-3">Home</span>
-        <v-icon>fas fa-home</v-icon>
+        <span class="pt-1">{{link.title}}</span>
+        <v-icon>{{link.icon}}</v-icon>
       </v-btn>
-      <v-btn
-        :color="color"
-        width="125"
-        :ripple="false"
-      >
-        <span class="my-3">Music</span>
-        <v-icon>mdi-music-note</v-icon>
-      </v-btn>
-      <v-btn
-        :color="color"
-        width="125"
-        :ripple="false"
-      >
-        <span class="my-3">Book</span>
-        <v-icon>mdi-book</v-icon>
-      </v-btn>
-      <v-btn
-        :color="color"
-        width="125"
-        :ripple="false"
-      >
-        <span class="my-3">Image</span>
-        <v-icon>mdi-image</v-icon>
-      </v-btn>
-    </v-bottom-navigation>
-  </div>
+
+    </v-btn-toggle>
+  </v-bottom-navigation>
 </template>
 
 <script>
@@ -52,7 +33,17 @@ export default {
   data() {
     return {
       value: 0,
+      toggle_exclusive: null,
+      links: [
+        { title: "Home", icon: "fas fa-home", to: "/" },
+        { title: "New Pharmacy", icon: "fas fa-plus", to: "/pharmacy_manage" },
+      ],
     };
+  },
+  methods: {
+    goTo(to) {
+      this.$router.push(to);
+    },
   },
   computed: {
     color() {
@@ -74,13 +65,20 @@ export default {
 </script>
 
 <style >
+.v-btn-toggle > .v-btn.v-btn--active .v-icon {
+  color: white !important;
+  background-color: #0686e0 !important;
+  width: 37px;
+  height: 50px;
+  border-radius: 0.2em !important;
+  box-shadow: 0px 5px 14px rgba(1, 119, 251, 0.25) !important;
+}
+.v-btn-toggle > .v-btn.v-btn--active {
+  color: #0686e0 !important;
+}
+
 .v-btn:hover:before {
   opacity: 0 !important;
-
   background-color: transparent !important;
 }
-/* .v-btn:hover:after{
-
-  background-color: transparent !important;
-} */
 </style>

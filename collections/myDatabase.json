@@ -1,0 +1,24 @@
+{
+   "__collections__":{
+      "products":{
+         "sn":{
+            "company":"OOP",
+            "qty":"50",
+            "productName":"MY Garlic ",
+            "price":"5",
+            "__collections__":{
+               
+            }
+         },
+         "sn":{
+            "company":"fromvue",
+            "qty":"900",
+            "productName":"test",
+            "price":"30",
+            "__collections__":{
+               
+            }
+         }
+      }
+   }
+}

@@ -1,18 +1,19 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
+// import createPersistedState from "vuex-persistedstate";
 
 Vue.use(Vuex)
 
+import * as home from './modules/home'
+import * as pharmacy from './modules/pharmacy'
+
+
 export default new Vuex.Store({
-  state: {
-    todos: [],
-    completed: [],
-    dataFields: ['todos', 'completed']
+  modules: {
+    home,
+    pharmacy
   },
-  actions: {
-
-  },
-  mutations: {
-
-  },
+  // plugins: [
+  //   createPersistedState({ paths: ['app'], })
+  // ]
 })
